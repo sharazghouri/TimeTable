@@ -42,8 +42,8 @@
                     <input class="form-control required" type="text" name="duration">
                 </div>
 
-                <div class="col-xs-6">
-                    <div class="col-xs-6">
+
+                    <div class="col-xs-3">
                         <label for="ex2">Quality</label>
                         <select class="form-control " id="modal-quality" name="quality">
                             <option>HD</option>
@@ -52,7 +52,7 @@
                             <option>HDCAM</option>
                         </select>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-3">
                         <label for="ex2">Language</label>
                         <select class="form-control " id="modal-language" name="language">
                             <option>ARABIC</option>
@@ -62,7 +62,7 @@
                         </select>
 
                     </div>
-                </div>
+
             </div>
             <div class="form-group row">
 
@@ -92,7 +92,7 @@
                     </div>
                 </div>
 
-                <div class="text-center fixed col-md-12 pointer" onclick="setLinkRow()" style=""><i class="fa fa-plus"
+                <div class="text-center  col-md-12 pointer" onclick="setLinkRow()" style=""><i class="fa fa-plus"
                                                                                                     style="margin:10px; color:white;background-color:#0000AA; padding:10px;"></i>
                 </div>
 
@@ -192,8 +192,8 @@
                                 <label for="ex1">Duration</label>
                                 <input id="edit_duration" class="form-control " type="text" name="duration">
                             </div>
-                            <div class="col-xs-6">
-                                <div class="col-xs-6">
+
+                                <div class="col-xs-3">
                                     <label for="ex2">Quality</label>
                                     <select class="form-control " id="modal-quality" name="quality">
                                         <option>HD</option>
@@ -202,7 +202,7 @@
                                         <option>HDCAM</option>
                                     </select>
                                 </div>
-                                <div class="col-xs-6">
+                                <div class="col-xs-3">
                                     <label for="ex2">Language</label>
                                     <select class="form-control " id="modal-language" name="language">
                                         <option>ARABIC</option>
@@ -212,7 +212,7 @@
                                     </select>
 
                                 </div>
-                            </div>
+
 
                         </div>
                         <div class="form-group">
@@ -222,7 +222,7 @@
 
                             </div>
                         </div>
-                        <div class="text-center fixed col-md-12 pointer" onclick="setLinkRow()" style=""><i
+                        <div class="text-center  col-md-12 pointer" onclick="setLinkRow()" style=""><i
                                     class="fa fa-plus"
                                     style="margin:10px; color:white;background-color:#0000AA; padding:10px;"></i></div>
                         <input type="hidden" id="episode_id" name="episode_id">
@@ -346,7 +346,7 @@
 
                     json = data;
                     if (json.success == true) {
-
+go
                         $('.response').html('<div class="alert alert-success text-center"><a class="close" data-dismiss="alert">×</a><span> Successfully Added ... </span></div>');
                         document.getElementById("data").reset();
                         $('#cat_tbl').html('');

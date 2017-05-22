@@ -29,8 +29,8 @@
                     <label for="ex1">Release Year</label>
                     <input class="form-control required" type="text" name="release_date">
                 </div>
-                <div class="col-xs-6">
-                    <div class="col-xs-6">
+
+                    <div class="col-xs-3">
                         <label for="ex2">Quality</label>
                         <select class="form-control required" name="quality">
                             <option>HD</option>
@@ -39,7 +39,7 @@
                             <option>HDCAM</option>
                         </select>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-3">
                         <label for="ex2">Language</label>
                         <select class="form-control required" name="language">
                             <option>ARABIC</option>
@@ -49,7 +49,7 @@
                         </select>
 
                     </div>
-                </div>
+
 
             </div>
             <div class="form-group row">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="text-center fixed col-md-12 pointer" onclick="setLinkRow()" style=""><i class="fa fa-plus"
+                <div class="text-center  col-md-12 pointer" onclick="setLinkRow()" style=""><i class="fa fa-plus"
                                                                                                     style="margin:10px; color:white;background-color:#0000AA; padding:10px;"></i>
                 </div>
 
@@ -223,8 +223,7 @@
                                 <input class="form-control " id="edit_year" type="text" name="release_date">
                             </div>
 
-                            <div class="col-xs-6">
-                                <div class="col-xs-6">
+                                <div class="col-xs-3">
                                     <label for="ex2">Quality</label>
                                     <select class="form-control " id="modal-quality" name="quality">
                                         <option>HD</option>
@@ -233,7 +232,7 @@
                                         <option>HDCAM</option>
                                     </select>
                                 </div>
-                                <div class="col-xs-6">
+                                <div class="col-xs-3">
                                     <label for="ex2">Language</label>
                                     <select class="form-control " id="modal-language" name="language">
                                         <option>ARABIC</option>
@@ -243,7 +242,7 @@
                                     </select>
 
                                 </div>
-                            </div>
+
 
 
                         </div>
