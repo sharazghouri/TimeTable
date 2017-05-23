@@ -278,7 +278,7 @@
 
                             $('#cat_tbl').append( '<tr>'+
                                     '<td>'+json.data[i].series_id+'</td>'+
-                                    '<td><img src="http://95.215.62.43/onlineM/api/'+json.data[i].thumb_img+'" height="50px" width="50px" ></td>'+
+                                    '<td><img src="http://95.215.62.43/onlineM/'+json.data[i].thumb_img+'" height="50px" width="50px" ></td>'+
                                     '<td>'+json.data[i].title+'</td>'+
                                     '<td>'+json.data[i].writer+'</td>'+
                                     '<td>'+json.data[i].director+'</td>'+

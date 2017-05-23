@@ -378,7 +378,7 @@ go
                     for (var i = 0; i < json.data.length; i++) {
 
                         $('#cat_tbl').append('<tr>' +
-                            '<td><img src="http://95.215.62.43/onlineM/api/' + json.data[i].thumb_img + '" height="50px" width="50px" ></td>' +
+                            '<td><img src="http://95.215.62.43/onlineM/' + json.data[i].thumb_img + '" height="50px" width="50px" ></td>' +
                             '<td>' + json.data[i].title + '</td>' +
                             '<td>' + json.data[i].duration + '</td>' +
                             '<td>' + json.data[i].create_time + '</td>' +
