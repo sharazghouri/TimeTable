@@ -14,25 +14,36 @@
     <div class="row" style="margin-left: 5px;">
         <form id="data">
             <div class="form-group row">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <label for="ex1">Title</label>
                     <input class="form-control required" type="text" name="title">
                 </div>
-                <div class="col-xs-6">
-                    <label for="ex2">Writer</label>
-                    <input class="form-control required" type="text" name="writer">
-                </div>
+
 
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
                     <label for="ex1">Director</label>
                     <input class="form-control required" type="text" name="director">
+                </div><div class="col-xs-6">
+                    <label for="ex2">Writer</label>
+                    <input class="form-control required" type="text" name="writer">
                 </div>
+
+
+            </div>
+
+            <div class="form-group row" >
+
                 <div class="col-xs-6">
                     <label for="ex2">Thumb image</label>
-                    <input class="form-control required" type="file" name="thumb_img">
+                    <input class="form-control " type="file" name="thumb_img">
                 </div>
+                <div class="col-xs-6">
+                    <label for="ex2">Thumb URL</label>
+                    <input class="form-control " type="input" name="thumb_url">
+                </div>
+
 
             </div>
             <div class="form-group row">
@@ -116,14 +127,11 @@
                 <div class="modal-body">
                     <form id="edit_form">
                         <div class="form-group row">
-                            <div class="col-xs-6">
+                            <div class="col-xs-12">
                                 <label for="ex1">Title</label>
                                 <input id="edit_title"  class="form-control" type="text" name="title">
                             </div>
-                            <div class="col-xs-6">
-                                <label for="ex2">Writer</label>
-                                <input id="edit_writer" class="form-control" type="text" name="writer">
-                            </div>
+
 
                         </div>
                         <div class="form-group row">
@@ -132,10 +140,22 @@
                                 <input id="edit_director" class="form-control " type="text" name="director">
                             </div>
                             <div class="col-xs-6">
+                                <label for="ex2">Writer</label>
+                                <input id="edit_writer" class="form-control" type="text" name="writer">
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-xs-6">
                                 <label for="ex2">Thumb image</label>
                                 <input class="form-control"  type="file" name="thumb_img">
                             </div>
-
+                            <div class="col-xs-6">
+                                <label for="ex2">Thumb URL</label>
+                                <input class="form-control"  type="file" id="edit_thumb_url" name="thumb_url">
+                            </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
@@ -359,6 +379,7 @@
                                 $('#edit_director').val(json.data[i].director);
                                 $('#edit_desc').html(json.data[i].description);
                                 $('#series_id').val(json.data[i].series_id);
+                                $('#edit_thumb_url').val(json.data[i].thumb_url);
                                 setCategory(json.data[i].casts);
 
 
