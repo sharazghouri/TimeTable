@@ -154,7 +154,7 @@
                             </div>
                             <div class="col-xs-6">
                                 <label for="ex2">Thumb URL</label>
-                                <input class="form-control"  type="file" id="edit_thumb_url" name="thumb_url">
+                                <input class="form-control"  type="text" id="edit_thumb_url" name="thumb_url">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -164,8 +164,8 @@
 
                             </div>
                             <div class="col-xs-6">
-                                <label for="ex2">Cast</label>
-                                <select id="modal-cast" class="category form-control " size="5" multiple>
+                                <label for="ex2">Actor</label>
+                                <textarea class="form-control " id="edit_actors" name="actors" rows="5"></textarea>
                                 </select>
                                 <span class="help-block">ctrl +  select for multiple select</span>
                             </div>
@@ -293,16 +293,17 @@
 
 
 
+               //     ((json.data[i].thumb_img.substring(0, 3) == "api")? 'http://95.215.62.43/onlineM/'+json.data[i].thumb_img: json.data[i].thumb_img )
 
                         for(var i =0; i < json.data.length ; i++){
 
                             $('#cat_tbl').append( '<tr>'+
                                     '<td>'+json.data[i].series_id+'</td>'+
-                                    '<td><img src="http://95.215.62.43/onlineM/'+json.data[i].thumb_img+'" height="50px" width="50px" ></td>'+
+                                    '<td><img src="'+(  (typeof (json.data[i].thumb_img) !== 'undefined')&& (json.data[i].thumb_img.startsWith("api") )? 'http://95.215.62.43/onlineM/'+json.data[i].thumb_img: json.data[i].thumb_url )+'" height="50px" width="50px" ></td>'+
                                     '<td>'+json.data[i].title+'</td>'+
                                     '<td>'+json.data[i].writer+'</td>'+
                                     '<td>'+json.data[i].director+'</td>'+
-                                    '<td>'+json.data[i].cast_titles+'</td>'+
+                                    '<td>'+json.data[i].actors_titles+'</td>'+
                                     '<td><a href="/moviesapp/episode/'+json.data[i].series_id+'"> <span class="badge">'+json.data[i].episodes.length+'</span></a> </td>'+
                                     ' <td class="text-center"><span data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="editData('+json.data[i].series_id+')" ><span class="glyphicon glyphicon-pencil"></span></button></span>'+
                                     '<span data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"  onclick="sureDelete('+json.data[i].series_id+')" ><span class="glyphicon glyphicon-trash"></span></button></span>'+
@@ -377,6 +378,7 @@
                                 $('#edit_title').val(json.data[i].title);
                                 $('#edit_writer').val(json.data[i].writer);
                                 $('#edit_director').val(json.data[i].director);
+                                $('#edit_actors').val(json.data[i].actors_titles);
                                 $('#edit_desc').html(json.data[i].description);
                                 $('#series_id').val(json.data[i].series_id);
                                 $('#edit_thumb_url').val(json.data[i].thumb_url);
@@ -463,36 +465,7 @@
 
 
        ;*/
-        function setCategory(preData) {
 
-            $.post('http://95.215.62.43/onlineM/api/cast/get_cast.php',
-                    {},
-                    function (data) {
-
-                        json = data;
-
-
-                        for (var i = 0; i < json.data.length; i++) {
-
-                            $('.category').append('<option value="' + json.data[i].cast_id + '">' + json.data[i].full_name + '</option>');
-                        }
-
-                        if(preData != null) {
-                            var selectEl = document.querySelector("#modal-cast");
-                            for(var i=0; i<selectEl.options.length; i++) {
-                                for(var j=0; j<preData.length; j++) {
-                                    if(preData[j].cast_id == selectEl.options[i].value) {
-                                        selectEl.options[i].selected = true;
-                                    }
-                                }
-                            }
-                        }
-
-
-                    });
-
-        }
-        setCategory(null);
 
     </script>
     <!-- DataTables -->

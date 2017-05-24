@@ -400,7 +400,7 @@
 
                             $('#cat_tbl').append('<tr>' +
                                     '<td>' + json.data[i].movie_id + '</td>' +
-                                    '<td><img src="http://95.215.62.43/onlineM/' + json.data[i].thumb_img + '" height="50px" width="50px" ></td>' +
+                                    '<td><img src="'+(  (typeof (json.data[i].thumb_img) !== 'undefined')&& (json.data[i].thumb_img.startsWith("api") )? 'http://95.215.62.43/onlineM/'+json.data[i].thumb_img: json.data[i].thumb_url )+'" height="50px" width="50px" ></td>'+
                                     '<td>' + json.data[i].title + '</td>' +
                                     '<td>' + json.data[i].duration + '</td>' +
                                     '<td>   ' + json.data[i].categories_titles + '</td>' +
