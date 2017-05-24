@@ -321,7 +321,6 @@ function  updateActor() {
 
 */
 function setLinkRow() {
-
     $('.link-row').append('<div class="">' +
             '<div class="col-xs-6"><label for="ex2">Vedio Link</label>' +
             '<input class="form-control " type="text" name="links[]"></div>' +
@@ -337,8 +336,8 @@ function setLinkRow() {
             '<div class="col-xs-3">' +
             '<label for="ex2">Language</label>' +
             '<select class="form-control " name="links_language[]">' +
-            '<option>ARABIC</option>' +
             '<option>ENGLISH</option>' +
+            '<option>ARABIC</option>' +
             '<option>HINDI</option>' +
 
             '</select>' +
@@ -346,6 +345,7 @@ function setLinkRow() {
             '</div>' +
             '<i class="fa fa-times pointer" onclick="removeLinkRow(this)"><i/>' +
             '</div>');
+
 
 }
 function removeLinkRow(e) {

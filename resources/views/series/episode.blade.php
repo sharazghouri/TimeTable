@@ -55,8 +55,8 @@
                     <div class="col-xs-3">
                         <label for="ex2">Language</label>
                         <select class="form-control " id="modal-language" name="language">
-                            <option>ARABIC</option>
                             <option>ENGLISH</option>
+                            <option>ARABIC</option>
                             <option>HINDI</option>
 
                         </select>
@@ -82,8 +82,8 @@
                         <div class="col-xs-3">
                             <label for="ex2">Language</label>
                             <select class="form-control required" name="links_language[]">
-                                <option>ARABIC</option>
                                 <option>ENGLISH</option>
+                                <option>ARABIC</option>
                                 <option>HINDI</option>
 
                             </select>
@@ -205,8 +205,8 @@
                                 <div class="col-xs-3">
                                     <label for="ex2">Language</label>
                                     <select class="form-control " id="modal-language" name="language">
-                                        <option>ARABIC</option>
                                         <option>ENGLISH</option>
+                                        <option>ARABIC</option>
                                         <option>HINDI</option>
 
                                     </select>
@@ -276,31 +276,31 @@
     <script>
 
         function setLinkRow() {
-
             $('.link-row').append('<div class="">' +
-                '<div class="col-xs-6"><label for="ex2">Vedio Link</label>' +
-                '<input class="form-control " type="text" name="links[]"></div>' +
-                '<div class="col-xs-3">' +
-                '<label for="ex2">Quality</label>' +
-                '<select class="form-control " name="links_quality[]">' +
-                '<option>HD</option>' +
-                '<option>CAM</option>' +
-                '<option>DVD</option>' +
-                '<option>HDCAM</option>' +
-                '</select>' +
-                '</div>' +
-                '<div class="col-xs-3">' +
-                '<label for="ex2">Language</label>' +
-                '<select class="form-control " name="links_language[]">' +
-                '<option>ARABIC</option>' +
-                '<option>ENGLISH</option>' +
-                '<option>HINDI</option>' +
+                    '<div class="col-xs-6"><label for="ex2">Vedio Link</label>' +
+                    '<input class="form-control " type="text" name="links[]"></div>' +
+                    '<div class="col-xs-3">' +
+                    '<label for="ex2">Quality</label>' +
+                    '<select class="form-control " name="links_quality[]">' +
+                    '<option>HD</option>' +
+                    '<option>CAM</option>' +
+                    '<option>DVD</option>' +
+                    '<option>HDCAM</option>' +
+                    '</select>' +
+                    '</div>' +
+                    '<div class="col-xs-3">' +
+                    '<label for="ex2">Language</label>' +
+                    '<select class="form-control " name="links_language[]">' +
+                    '<option>ENGLISH</option>' +
+                    '<option>ARABIC</option>' +
+                    '<option>HINDI</option>' +
 
-                '</select>' +
+                    '</select>' +
 
-                '</div>' +
-                '<i class="fa fa-times pointer" onclick="removeLinkRow(this)"><i/>' +
-                '</div>');
+                    '</div>' +
+                    '<i class="fa fa-times pointer" onclick="removeLinkRow(this)"><i/>' +
+                    '</div>');
+
 
         }
         function removeLinkRow(e) {
