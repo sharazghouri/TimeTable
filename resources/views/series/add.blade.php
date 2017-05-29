@@ -319,7 +319,7 @@
         }
 
         function  sureDelete(id) {
-
+            $('.del-msg').html('Are you sure you want to delete this Record?');
             $('#del_cat').val(id);
 
         }
@@ -340,7 +340,7 @@
                     if (json.success == true) {
                         $('input').val('');
                         $('.del-msg').html('Deleted Successfullly ...');
-
+                        $('#delete').modal('hide');
                         $('#cat_tbl').html('');
                         getSeries();
                     } else {

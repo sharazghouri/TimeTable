@@ -465,6 +465,7 @@
                         document.getElementById("data").reset();
 
                         $('button').prop('disabled', false);
+                        getmovies();
                     } else {
 
 
@@ -599,7 +600,7 @@
 
 
         function sureDelete(id) {
-
+            $('.del-msg').html('Are you sure you want to delete this Record?');
             $('#del_cat').val(id);
 
         }
@@ -620,7 +621,7 @@
                     if (json.success == true) {
                         $('input').val('');
                         $('.del-msg').html('Deleted Successfullly ...');
-
+                        $('#delete').modal('hide');
                         $('#cat_tbl').html('');
                         getmovies();
                     } else {
@@ -698,8 +699,10 @@
     <script>
         var dataTable = null;
         function refreshTable() {
+            if(dataTable != null) {
+                dataTable.fnDestroy();
+            }
             dataTable = $('#example2').DataTable({
-                "destroy": true,
                 "paging": true,
                 "lengthChange": false,
                 "searching": true,
@@ -708,6 +711,7 @@
                 "autoWidth": false
             });
         }
+
 
     </script>
 @endsection

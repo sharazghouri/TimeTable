@@ -346,7 +346,7 @@
 
                     json = data;
                     if (json.success == true) {
-go
+
                         $('.response').html('<div class="alert alert-success text-center"><a class="close" data-dismiss="alert">×</a><span> Successfully Added ... </span></div>');
                         document.getElementById("data").reset();
                         $('#cat_tbl').html('');
@@ -395,7 +395,7 @@ go
 
         }
         function sureDelete(id) {
-
+            $('.del-msg').html('Are you sure you want to delete this Record?');
             $('#del_cat').val(id);
 
         }
@@ -416,7 +416,7 @@ go
                     if (json.success == true) {
                         $('input').val('');
                         $('.del-msg').html('Deleted Successfullly ...');
-
+                        $('#delete').modal('hide');
                         $('#cat_tbl').html('');
                         getEpisode();
                     } else {

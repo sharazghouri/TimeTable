@@ -179,6 +179,7 @@ var url='http://95.215.62.43/onlineM/api/category/';
     }
 
     function  sureDelete(id) {
+        $('.del-msg').html('Are you sure you want to delete this Record?');
 
         $('#del_cat').val(id);
 
@@ -197,11 +198,12 @@ var url='http://95.215.62.43/onlineM/api/category/';
             success: function (data) {
 
                 json = data;
-                if (json.success == true) {
+              if (json.success == true) {
                     $('input').val('');
                     $('.del-msg').html('Deleted Successfullly ...');
 
                     $('#cat_tbl').html('');
+                    $('#delete').modal('hide');
                     getCategory();
                 } else {
 
