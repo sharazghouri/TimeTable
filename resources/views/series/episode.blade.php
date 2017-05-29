@@ -28,14 +28,29 @@
 
                 <div class="col-xs-6">
                     <label for="ex2">Thumb image</label>
-                    <input class="form-control required" type="file" name="thumb_img">
+                    <input class="form-control " type="file" name="thumb_img">
                 </div>
                 <div class="col-xs-6">
                     <label for="ex2">Poster image</label>
-                    <input class="form-control required" type="file" name="poster_img">
+                    <input class="form-control " type="file" name="poster_img">
                 </div>
 
             </div>
+            <div class="form-group row">
+
+                <div class="col-xs-6">
+                    <label for="ex2">Thumb URL</label>
+                    <input class="form-control " type="text" name="thumb_url">
+                </div>
+                <div class="col-xs-6">
+                    <label for="ex2">Poster URL</label>
+                    <input class="form-control " type="text" name="poster_url">
+                </div>
+
+            </div>
+
+
+
             <div class="form-group row">
                 <div class="col-xs-6">
                     <label for="ex1">Duration</label>
@@ -187,6 +202,19 @@
                             </div>
 
                         </div>
+                        <div class="form-group row">
+
+                            <div class="col-xs-6">
+                                <label for="ex2">Thumb URL</label>
+                                <input class="form-control " id="edit_thumb_url" type="text" name="thumb_url">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="ex2">Poster URL</label>
+                                <input class="form-control " id="edit_poster_url" type="text" name="poster_url">
+                            </div>
+
+                        </div>
+
                         <div class="form-group row">
                             <div class="col-xs-6">
                                 <label for="ex1">Duration</label>
@@ -454,6 +482,8 @@
                             $('#edit_link').val(json.data[i].episode_path);
                             $('#edit_desc').html(json.data[i].description);
                             $('#episode_id').val(json.data[i].episode_id);
+                            $('#edit_thumb_url').val(json.data[i].thumb_url);
+                            $('#edit_poster_url').val(json.data[i].poster_url);
 
                             setLanguage(json.data[i].language);
                             setQuality(json.data[i].quality);
