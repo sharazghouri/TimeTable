@@ -335,7 +335,7 @@ var url='http://95.215.62.43/onlineM/api/category/';
 
                         $('#cat_tbl').append( '<tr>'+
                         '<td>'+json.data[i].category_id+'</td>'+
-                        '<td><img src="'+(  (typeof (json.data[i].thumb_img) !== 'undefined')&& (json.data[i].thumb_img.startsWith("api") )? 'http://95.215.62.43/onlineM/'+json.data[i].thumb_img: json.data[i].thumb_url )+'" height="50px" width="50px" ></td>'+
+                        '<td><img src="http://95.215.62.43/onlineM/'+json.data[i].image+'" height="50px" width="50px" ></td>'+
                         '<td>'+json.data[i].title+'</td>'+
                         '<td>'+json.data[i].title_ar+'</td>'+
                         '<td class="text-center"><span data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="editData('+json.data[i].category_id+')" ><span class="glyphicon glyphicon-pencil"></span></button></span>'+
