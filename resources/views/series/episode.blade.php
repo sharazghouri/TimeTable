@@ -14,14 +14,14 @@
     <div class="row" style="margin-left: 5px;">
         <form id="data">
             <div class="form-group row">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <label for="ex1">Title</label>
                     <input class="form-control required" type="text" name="title">
                 </div>
-                <div class="col-xs-6">
+                {{--<div class="col-xs-6">
                     <label for="ex2">Episode Link</label>
                     <input class="form-control required" type="text" name="episode_path">
-                </div>
+                </div>--}}
 
             </div>
             <div class="form-group row">
@@ -180,14 +180,14 @@
                 <div class="modal-body">
                     <form id="edit_form">
                         <div class="form-group row">
-                            <div class="col-xs-6">
+                            <div class="col-xs-12">
                                 <label for="ex1">Title</label>
                                 <input id="edit_title" class="form-control " type="text" name="title">
                             </div>
-                            <div class="col-xs-6">
+                           {{-- <div class="col-xs-6">
                                 <label for="ex2">Episode Link</label>
                                 <input id="edit_link" class="form-control " type="text" name="episode_path">
-                            </div>
+                            </div>--}}
 
                         </div>
                         <div class="form-group row">
@@ -487,6 +487,7 @@
 
                             setLanguage(json.data[i].language);
                             setQuality(json.data[i].quality);
+                            $("##update_row").html('');
                             for (var j = 0; j < json.data[i].links.length; j++) {
                                 $('#update_row').append('<div class="">' +
                                     '<div class="col-xs-6"><label for="ex2">Vedio Link</label>' +

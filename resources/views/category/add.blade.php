@@ -19,11 +19,25 @@
                     <input class="form-control required" type="text" name="title">
                 </div>
                 <div class="col-xs-6">
-                    <label for="ex2">Aabic</label>
+                    <label for="ex2">Aabic title</label>
                     <input class="form-control required"  type="text" name="title_ar">
                 </div>
 
             </div>
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="ex1">Thumb Image</label>
+                    <input class="form-control " type="file" name="thumb_img">
+                </div>
+                <div class="col-xs-6">
+                    <label for="ex2">Thumb URL</label>
+                    <input class="form-control "  type="text" name="thumb_url">
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <br>
         </form>
 <div class="text-center"><button class="btn btn-primary" onclick="addCategory()">Add Category</button></div>
     </div>
@@ -44,6 +58,7 @@
                         <tr>
 
                             <th>No</th>
+                            <th>Image</th>
                             <th>English</th>
                             <th>Arabic</th>
                             <th>Action</th>
@@ -83,14 +98,26 @@
                 </div>
                 <div class="modal-body">
                <form id="edit_form">
-                    <div class="form-group">
+                    <div class="form-group col-xs-6">
+                        <label for="ex1">English title</label>
                         <input class="form-control " type="text" name="title" id="edit_en">
                     </div>
-                    <div class="form-group">
-
+                    <div class="form-group col-xs-6">
+                        <label for="ex1">Arabic title</label>
                         <input class="form-control " type="text" name="title_ar" id="edit_ar">
                         <input  name="category_id"  type="hidden" name="category_id" id="edit_id">
                     </div>
+                   <div class="form-group ">
+                       <div class="col-xs-6">
+                           <label for="ex1">Thumb Image</label>
+                           <input class="form-control " type="file" name="thumb_img">
+                       </div>
+                       <div class="col-xs-6">
+                           <label for="ex2">Thumb URL</label>
+                           <input class="form-control "  type="text" name="thumb_url">
+                       </div>
+
+                   </div>
                </form>
                 </div>
                 <div class="modal-footer ">
@@ -308,9 +335,10 @@ var url='http://95.215.62.43/onlineM/api/category/';
 
                         $('#cat_tbl').append( '<tr>'+
                         '<td>'+json.data[i].category_id+'</td>'+
+                        '<td><img src="'+(  (typeof (json.data[i].thumb_img) !== 'undefined')&& (json.data[i].thumb_img.startsWith("api") )? 'http://95.215.62.43/onlineM/'+json.data[i].thumb_img: json.data[i].thumb_url )+'" height="50px" width="50px" ></td>'+
                         '<td>'+json.data[i].title+'</td>'+
                         '<td>'+json.data[i].title_ar+'</td>'+
-                       ' <td class="text-center"><span data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="editData('+json.data[i].category_id+')" ><span class="glyphicon glyphicon-pencil"></span></button></span>'+
+                        '<td class="text-center"><span data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="editData('+json.data[i].category_id+')" ><span class="glyphicon glyphicon-pencil"></span></button></span>'+
                                 '<span data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"  onclick="sureDelete('+json.data[i].category_id+')" ><span class="glyphicon glyphicon-trash"></span></button></span>'+
                                 '</td>'+
                                 '</tr>');
