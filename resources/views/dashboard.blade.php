@@ -159,7 +159,7 @@
             <div class="col-md-3" >
                 <label>Maintenance Mode</label><br>
                 <label class="switch">
-                        <input type="checkbox" id="maintenance_mode"  >
+                        <input type="checkbox" id="maintenance_mode"  onchange="changeMode(this)" >
                         <div class="slider"></div>
                     </label>
 
@@ -304,7 +304,7 @@
         getFeature();
 
         function getMode() {
-            $.post(url+'/get_featured_movies.php',
+            $.post(url+'/dashboard/get_status.php',
                     {},
                     function(data){
 
@@ -316,11 +316,13 @@
                             if(json.data.mode==1){
 
                                 $("#maintenance_mode").prop('checked',true);
-                                $("#maintenance_mode").val(1);
-                            }else {
-
-                                $("#maintenance_mode").prop('checked',true);
                                 $("#maintenance_mode").val(0);
+                            }
+
+                            if(json.data.mode==0){
+
+                                $("#maintenance_mode").prop('checked',fale);
+                                $("#maintenance_mode").val(1);
                             }
 
                         }
@@ -335,7 +337,7 @@
 
             var value=SL.value;
 
-            $.post(url+'/get_featured_movies.php',
+            $.post(url+'/update_status.php.php',
                     {status:value},
                     function(data){
 
@@ -344,9 +346,9 @@
 
                         if (json.success==true){
 
-                            if(json.data.mode==1){
+
                                 getMode();
-                            }
+
 
                         }
 
