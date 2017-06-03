@@ -172,7 +172,7 @@
         var url = 'http://95.215.62.43/onlineM/api/movies/';
         function showData() {
             $.post('http://95.215.62.43/onlineM/api/dashboard/get_dashboard.php',
-                    {},
+                    {'system_ignore_mode':1},
                     function (data) {
 
                         json = data;
@@ -198,7 +198,7 @@
         function getmovies() {
 
             $.post('http://95.215.62.43/onlineM/api/movies/get_movies.php',
-                    {},
+                    {'system_ignore_mode':1},
                     function(data){
 
                         json = data;
@@ -272,7 +272,7 @@
       function getFeature() {
 
           $.post(url+'/get_featured_movies.php',
-                  {},
+                  {'system_ignore_mode':1},
                   function(data){
 
                       json = data;
@@ -305,7 +305,7 @@
 
         function getMode() {
             $.post(url + '../status/get_status.php',
-                    {},
+                    {'system_ignore_mode':1},
                     function(data){
                         json = data;
                         if (json.success == true){
