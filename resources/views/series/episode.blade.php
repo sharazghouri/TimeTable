@@ -397,7 +397,9 @@
         function getEpisode() {
 
             $.post(url + 'get_series_episodes.php',
-                {series_id: serial_id},
+                {series_id: serial_id,
+                    system_ignore_mode:1
+                },
                 function (data) {
 
                     json = data;

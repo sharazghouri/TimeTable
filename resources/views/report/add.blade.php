@@ -394,7 +394,7 @@ function delReport() {
 function getReport() {
 
     $.post(url+'get_reports.php',
-            {},
+            {'system_ignore_mode':1},
             function(data){
 
                 json = data;

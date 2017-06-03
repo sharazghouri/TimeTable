@@ -304,16 +304,13 @@
         getFeature();
 
         function getMode() {
-            $.post(url+'/dashboard/get_status.php',
+            $.post(url + '../status/get_status.php',
                     {},
                     function(data){
-
                         json = data;
+                        if (json.success == true){
 
-
-                        if (json.success==true){
-
-                            if(json.data.mode==1){
+                            if(json.data.mode == 1){
 
                                 $("#maintenance_mode").prop('checked',true);
                                 $("#maintenance_mode").val(0);
@@ -335,9 +332,9 @@
 
         function changeMode(SL) {
 
-            var value=SL.value;
+            var value=SL.value == "on" ? 1 : 0;
 
-            $.post(url+'/update_status.php.php',
+            $.post(url+'../status/update_status.php',
                     {status:value},
                     function(data){
 
@@ -347,7 +344,7 @@
                         if (json.success==true){
 
 
-                                getMode();
+                              
 
 
                         }

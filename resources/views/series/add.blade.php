@@ -286,7 +286,7 @@
         function getSeries() {
 
             $.post(url+'get_series.php',
-                    {},
+                    {'system_ignore_mode':1},
                     function(data){
 
                         json = data;

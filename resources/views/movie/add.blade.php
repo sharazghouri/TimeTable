@@ -388,7 +388,7 @@
         function getmovies() {
 
             $.post(url + 'get_movies.php',
-                    {},
+                    {'system_ignore_mode':1},
                     function (data) {
 
                         json = data;
@@ -660,7 +660,7 @@
         function setCategory(preData) {
 
             $.post('http://95.215.62.43/onlineM/api/category/get_categories.php',
-                    {},
+                    {'system_ignore_mode':1},
                     function (data) {
 
                         json = data;

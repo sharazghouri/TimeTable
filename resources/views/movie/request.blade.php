@@ -279,7 +279,7 @@ function delRequest() {
 function getMoviesRequest() {
 
     $.post(url+'get_movies_requests.php',
-            {},
+            {'system_ignore_mode':1},
             function(data){
 
                 json = data;
